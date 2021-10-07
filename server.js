@@ -16,8 +16,8 @@ app.use(express.static("public"));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true, });
 
-app.use(require("./routes/api"));//Json, anything that is fetch
-app.use(require("./routes/home"));//views, anything with a href
+app.use(require("./routes/api.js"));
+app.use(require("./routes/home.js"));
 
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}!`);
